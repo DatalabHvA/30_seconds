@@ -93,15 +93,7 @@ if chosen_categories:
         st.session_state.next = False
         timer_placeholder.write("Time's up!")
 		# Play sound when timer is up
-        st.markdown(
-            """
-            <script>
-            var audio = new Audio('timer_sound.mp3');  // Adjust the path to your sound file
-            audio.play();
-            </script>
-            """,
-            unsafe_allow_html=True
-        )
+        st.audio("./timer_sound.mp3", format="audio/mpeg", autoplay = True)
 
 else:
     st.write("Please select at least one category.")
