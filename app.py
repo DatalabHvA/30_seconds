@@ -39,7 +39,7 @@ st.title('30 Seconds Game')
 uploaded_file = st.sidebar.file_uploader("Upload your own text file for a custom category", type="txt")
 
 if uploaded_file is not None:
-    custom_category_name = uploaded_file.name.strip(".txt")
+    custom_category_name = uploaded_file.name.replace(".txt","")
     custom_words = uploaded_file.read().decode("utf-8").splitlines()
     random.shuffle(custom_words)
     word_dict[custom_category_name] = custom_words
