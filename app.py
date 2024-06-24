@@ -38,18 +38,19 @@ st.title('30 Seconds Game')
 # Checkboxes to select categories
 chosen_categories = [category for category in category_files.keys() if st.sidebar.checkbox(category)]
 
-# Slider to select countdown duration
-countdown_duration = st.sidebar.slider('Select countdown duration (seconds)', 10, 60, 30)
-
 # File uploader for custom category
 uploaded_file = st.sidebar.file_uploader("Upload your own text file for a custom category", type="txt")
 
 if uploaded_file is not None:
+    custom_category_name = uploaded_file.name.strip(".txt")
     custom_words = uploaded_file.read().decode("utf-8").splitlines()
     random.shuffle(custom_words)
-    word_dict["Custom"] = custom_words
-    if st.sidebar.checkbox("Custom"):
-        chosen_categories.append("Custom")
+    word_dict[custom_category_name] = custom_words
+    if st.sidebar.checkbox(custom_category_name):
+        chosen_categories.append(custom_category_name)
+
+# Slider to select countdown duration
+countdown_duration = st.sidebar.slider('Select countdown duration (seconds)', 10, 60, 30)
 
 if chosen_categories:
     # Initialize session state
