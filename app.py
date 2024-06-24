@@ -35,19 +35,28 @@ word_dict = load_words_from_files(category_files)
 
 st.title('30 Seconds Game')
 
-# Checkboxes to select categories
-chosen_categories = [category for category in category_files.keys() if st.sidebar.checkbox(category)]
-
 # File uploader for custom category
 uploaded_file = st.sidebar.file_uploader("Upload your own text file for a custom category", type="txt")
 
 if uploaded_file is not None:
-    custom_category_name = uploaded_file.name.strip(".txt")
+    custom_category_name = uploaded_file.name
     custom_words = uploaded_file.read().decode("utf-8").splitlines()
     random.shuffle(custom_words)
     word_dict[custom_category_name] = custom_words
+
+    # Checkbox for custom category
     if st.sidebar.checkbox(custom_category_name):
-        chosen_categories.append(custom_category_name)
+        chosen_categories = [custom_category_name]
+    else:
+        chosen_categories = []
+
+else:
+    chosen_categories = []
+
+# Checkboxes for predefined categories
+for category in category_files.keys():
+    if st.sidebar.checkbox(category):
+        chosen_categories.append(category)
 
 # Slider to select countdown duration
 countdown_duration = st.sidebar.slider('Select countdown duration (seconds)', 10, 60, 30)
