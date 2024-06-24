@@ -23,6 +23,9 @@ def get_next_words(word_dict, categories, words_per_set=5):
     random.shuffle(selected_words)
     return selected_words[:words_per_set]
 
+def play_sound(sound_file):
+	st.audio(sound_file, format='audio/mp3', autoplay = True)
+    
 # File paths for each category (adjust paths as necessary)
 category_files = {
     "Machine Learning": "categories/machine_learning.txt",
@@ -85,6 +88,7 @@ if chosen_categories:
     
     # Timer display
     timer_placeholder = st.empty()
+    audio_placeholder = st.empty()
     if st.session_state.start:
         for i in range(st.session_state.timer, -1, -1):
             timer_placeholder.write(f"Time remaining: {i} seconds")
@@ -93,7 +97,7 @@ if chosen_categories:
         st.session_state.next = False
         timer_placeholder.write("Time's up!")
 		# Play sound when timer is up
-        st.audio("./timer_sound.mp3", format="audio/mpeg", autoplay = True)
+        audio_placeholder.audio("./timer_sound.mp3", format='audio/mp3', autoplay = True)
 
 else:
     st.write("Please select at least one category.")
