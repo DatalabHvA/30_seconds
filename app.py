@@ -41,6 +41,16 @@ chosen_categories = [category for category in category_files.keys() if st.sideba
 # Slider to select countdown duration
 countdown_duration = st.sidebar.slider('Select countdown duration (seconds)', 10, 60, 30)
 
+# File uploader for custom category
+uploaded_file = st.sidebar.file_uploader("Upload your own text file for a custom category", type="txt")
+
+if uploaded_file is not None:
+    custom_words = uploaded_file.read().decode("utf-8").splitlines()
+    random.shuffle(custom_words)
+    word_dict["Custom"] = custom_words
+    if st.sidebar.checkbox("Custom"):
+        chosen_categories.append("Custom")
+
 if chosen_categories:
     # Initialize session state
     if 'start' not in st.session_state:
@@ -61,7 +71,7 @@ if chosen_categories:
     word_placeholder = st.empty()
     with word_placeholder.container():
         for word in st.session_state.words:
-            st.markdown(f"<h1 style='font-size: 40px;'>{word}</h1>", unsafe_allow_html=True)
+            st.markdown(f"<h1 style='font-size: 30px;'>{word}</h1>", unsafe_allow_html=True)
     
     # Timer display
     timer_placeholder = st.empty()
