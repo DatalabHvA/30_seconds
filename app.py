@@ -1,7 +1,6 @@
 import streamlit as st
 import random
 import time
-import pygame
 
 # Load words from files
 def load_words_from_files(category_files):
@@ -33,9 +32,6 @@ category_files = {
 
 # Load words
 word_dict = load_words_from_files(category_files)
-
-pygame.init()
-pygame.mixer.music.load("./timer_sound.mp3")  # Adjust the path to your sound file
 
 st.title('30 Seconds Game')
 
@@ -97,6 +93,7 @@ if chosen_categories:
         st.session_state.next = False
         timer_placeholder.write("Time's up!")
 		# Play sound when timer is up
-        pygame.mixer.music.play()
+        os.system("aplay timer_sound.mp3")
+
 else:
     st.write("Please select at least one category.")
