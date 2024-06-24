@@ -61,7 +61,7 @@ if chosen_categories:
     word_placeholder = st.empty()
     with word_placeholder.container():
         for word in st.session_state.words:
-            st.markdown(f"<h1 style='font-size: 40px;'>{word}</h1>", unsafe_allow_html=True)
+            st.markdown(f"<h1 style='font-size: 30px;'>{word}</h1>", unsafe_allow_html=True)
     
     # Timer display
     timer_placeholder = st.empty()
