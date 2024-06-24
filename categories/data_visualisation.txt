@@ -1,0 +1,9 @@
+bar chart
+box plot
+histogram
+scatter plot
+matplotlib
+seaborn
+axis label
+hue
+choropleth

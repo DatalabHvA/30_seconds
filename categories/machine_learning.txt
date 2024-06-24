@@ -1,0 +1,13 @@
+random forest
+train-test split
+supervised learning
+neural network
+overfitting
+hyperparameter
+convolutional neural network
+scikit-learn
+confusion matrix
+precision
+recall
+accuracy
+root mean squared error
