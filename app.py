@@ -23,8 +23,8 @@ def get_next_words(word_dict, categories, words_per_set=5):
     random.shuffle(selected_words)
     return selected_words[:words_per_set]
 
-def play_sound(sound_file):
-	st.audio(sound_file, format='audio/mp3', autoplay = True)
+def play_sound(audio_placeholder):
+	audio_placeholder.audio("./timer_sound.mp3", format='audio/mp3', autoplay = True)
     
 # File paths for each category (adjust paths as necessary)
 category_files = {
@@ -72,12 +72,15 @@ if chosen_categories:
         st.session_state.timer = countdown_duration
     if 'words' not in st.session_state:
         st.session_state.words = []
+    if 'round' not in st.session_state:
+        st.session_state.round = 0
 
     # Start/Next button logic
-    if st.button('Start' if not st.session_state.start else 'Next'):
+    if st.button('Start' if st.session_state.round == 0 else 'Next'):
         st.session_state.start = True
         st.session_state.timer = countdown_duration
         st.session_state.words = get_next_words(word_dict, chosen_categories)
+        st.session_state.round += 1
 
     # Display words immediately
     st.write("Words:")
@@ -93,11 +96,10 @@ if chosen_categories:
         for i in range(st.session_state.timer, -1, -1):
             timer_placeholder.write(f"Time remaining: {i} seconds")
             time.sleep(1)
-        st.session_state.start = False
         st.session_state.next = False
         timer_placeholder.write("Time's up!")
 		# Play sound when timer is up
-        audio_placeholder.audio("./timer_sound.mp3", format='audio/mp3', autoplay = True)
+        play_sound(audio_placeholder)
 
 else:
     st.write("Please select at least one category.")
