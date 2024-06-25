@@ -88,12 +88,15 @@ if chosen_categories:
     
     # Timer display
     timer_placeholder = st.empty()
+    audio_placeholder = st.empty()
+
     if st.session_state.start:
         for i in range(st.session_state.timer, -1, -1):
             timer_placeholder.write(f"Time remaining: {i} seconds")
             time.sleep(1)
         st.session_state.next = False
         timer_placeholder.write("Time's up!")
+        audio_placeholder.audio('timer_sound.mp3', format="audio/mpeg", autoplay = True)
 
 else:
     st.write("Please select at least one category.")
