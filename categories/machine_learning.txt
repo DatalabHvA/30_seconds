@@ -1,40 +1,40 @@
-random forest
-lineair regression
-logistic regression
-decision tree
-gradient boosting
-principal component analysis
-regularisation
-bagging
-support vector machine
-naive bayes classifier
+Random forest
+Lineair regression
+Logistic regression
+Decision tree
+Gradient boosting
+Principal component analysis
+Regularisation
+Bagging
+Support vector machine
+Naive bayes
 K-means
-gaussian mixture model
-nearest neighbour
-neural network
-convolutional neural network
-classification
-feature importance
-regression
-clustering
-dimensionality reduction
-train-test split
-decision threshold
-class weights
-cross validation
-supervised learning
-unsupervised learning
-overfitting
-hyperparameter
-grid search
+Gaussian mixture model
+Nearest neighbour
+Neural network
+Convolutional neural network (CNN)
+Classification
+Feature importance
+Regression
+Clustering
+Dimensionality reduction
+Train-test split
+Decision threshold
+Class weights
+Cross validation
+Supervised learning
+Unsupervised learning
+Overfitting
+Hyperparameter
+Grid search
 scikit-learn
 keras
 tensorflow
-confusion matrix
-precision
-recall
-accuracy
+Confusion matrix
+Precision
+Recall
+Accuracy
 f1-score
-root mean squared error
-reinforcement learning
-feature selection
+Root mean squared error
+Reinforcement learning
+Feature selection
