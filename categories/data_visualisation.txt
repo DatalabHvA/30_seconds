@@ -1,9 +1,31 @@
-bar chart
-box plot
-histogram
-scatter plot
+Bar chart
+Stacked bar chart
+Box plot
+Pie chart
+Histogram
+Scatter plot
+Line plot
+Density plot
+Heatmap
+Violin plot
 matplotlib
 seaborn
-axis label
-hue
-choropleth
+x-axis
+y-axis
+Axis label
+Legend
+Plot title
+Color palette
+Hue
+Figure size
+Facet grid
+Correlation
+Data distribution
+Choropleth map
+Dashboard
+Exploratory data analysis (EDA)
+Trend line
+Infographic
+KPI
+Pivot table
+Normalization
