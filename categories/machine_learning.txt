@@ -1,13 +1,40 @@
 random forest
-train-test split
-supervised learning
+lineair regression
+logistic regression
+decision tree
+gradient boosting
+principal component analysis
+regularisation
+bagging
+support vector machine
+naive bayes classifier
+K-means
+gaussian mixture model
+nearest neighbour
 neural network
+convolutional neural network
+classification
+feature importance
+regression
+clustering
+dimensionality reduction
+train-test split
+decision threshold
+class weights
+cross validation
+supervised learning
+unsupervised learning
 overfitting
 hyperparameter
-convolutional neural network
+grid search
 scikit-learn
+keras
+tensorflow
 confusion matrix
 precision
 recall
 accuracy
+f1-score
 root mean squared error
+reinforcement learning
+feature selection
