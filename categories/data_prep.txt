@@ -1,11 +1,30 @@
-outlier
-missing value
-spelfout
-feature engineering
-long format
-wide format
-datetime index
-groupby
-interpolation
+Outlier
+Missing value
+Duplicates
+Bias
+Measurement error
+Spelling mistakes
+Feature engineering
+Long format
+Wide format
+Groupby
+Interpolation
 numpy
 pandas
+Data quality
+Data filtering
+Data merging
+Data aggregation
+ETL (Extract, Transform, Load)
+Raw data
+Data cleaning
+Tidy data
+Data type
+Categorical data
+Numeric data
+Boolean
+Integer
+String
+Float
+Datetime
+Index
