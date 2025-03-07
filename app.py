@@ -38,7 +38,7 @@ category_files = {
 # Load words
 word_dict = load_words_from_files(category_files)
 
-st.title('30 Seconds Game')
+st.title('30 Seconds game')
 
 # File uploader for custom category
 uploaded_file = st.sidebar.file_uploader("Upload your own text file for a custom category", type="txt")
