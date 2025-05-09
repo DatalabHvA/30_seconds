@@ -1,6 +1,7 @@
 import streamlit as st
 import random
 import time
+# extra regel
 
 # Load words from files
 def load_words_from_files(category_files):
