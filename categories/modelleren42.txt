@@ -1,0 +1,50 @@
+tijdreeks
+ruis
+uitschieter
+verdeling
+variantie
+frequentie
+autocorrelatie
+moving average
+afgeleide
+hersencel
+clustering
+aggregatie
+supervised learning
+zwembroek
+unsupervised learning
+data cleaning
+machine learning
+cross-validation
+z-score
+hyperparameter
+storing
+confusion matrix
+accuraatheid
+f1-score
+classificatie
+normaalverdeling
+amplitude
+periode
+cosinus
+stochastisch
+verwachtingswaarde
+stationair
+trend
+anomaliedetectie
+model
+regressie
+traindata
+testdata
+validatieset
+populatie
+steekproef
+schatter
+elektrode
+Hertz
+hidden layer
+activatiefunctie
+regularisatie
+euclidische afstand
+bimodale verdeling
+mean absolute error
