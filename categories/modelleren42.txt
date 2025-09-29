@@ -11,6 +11,7 @@ hersencel
 clustering
 aggregatie
 supervised learning
+zwembroek
 unsupervised learning
 data cleaning
 machine learning
