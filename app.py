@@ -33,7 +33,8 @@ def get_next_words(word_dict, played_words_dict, categories, words_per_set=5):
 category_files = {
     "Machine Learning": "categories/machine_learning.txt",
     "Data visualisation": "categories/data_visualisation.txt",
-    "Data preparation": "categories/data_prep.txt"
+    "Data preparation": "categories/data_prep.txt",
+	"Modelleren 4.2" : "categories/modelleren42.txt"
 }
 
 # Load words
