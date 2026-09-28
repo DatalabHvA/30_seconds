@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>30 Seconds · Datalab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button id="menuBtn" class="icon-btn menu-btn" aria-label="Settings" aria-expanded="false">☰</button>
+    <div class="brand">
+      <span class="brand-mark">Datalab</span>
+      <span class="brand-title">30 Seconds</span>
+    </div>
+    <button id="fullscreenBtn" class="icon-btn" aria-label="Full screen" title="Full screen (F)">⛶</button>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <section>
+        <h2>Word lists</h2>
+        <div id="categoryList" class="category-list">
+          <p class="muted">Loading…</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Your own list</h2>
+        <label class="upload">
+          <input id="uploadInput" type="file" accept=".txt,text/plain" multiple>
+          <span>Upload .txt file</span>
+        </label>
+        <p class="muted small">One word or term per line.</p>
+      </section>
+
+      <section>
+        <h2>Time per round</h2>
+        <div class="duration">
+          <input id="durationInput" type="range" min="10" max="60" step="5" value="30">
+          <output id="durationOutput">30 s</output>
+        </div>
+      </section>
+
+      <section class="stats">
+        <p class="muted small" id="deckInfo"></p>
+      </section>
+    </aside>
+
+    <main class="stage">
+      <div id="card" class="card idle">
+        <div class="timer" aria-live="polite">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="track" cx="60" cy="60" r="52"></circle>
+            <circle id="ring" class="ring" cx="60" cy="60" r="52"></circle>
+          </svg>
+          <span id="timeLeft" class="time-left">30</span>
+        </div>
+
+        <ol id="wordList" class="words"></ol>
+        <p id="hint" class="hint">Choose one or more word lists and press <strong>Next</strong> to start.</p>
+
+        <div id="timesUp" class="times-up" hidden>Time's up!</div>
+      </div>
+
+      <div class="controls">
+        <button id="nextBtn" class="next-btn" disabled>Next</button>
+        <p class="muted small">Press <kbd>Space</kbd> for the next round · click a word to mark it guessed</p>
+      </div>
+    </main>
+  </div>
+
+  <audio id="timerSound" src="timer_sound.mp3" preload="auto"></audio>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+[
+  { "name": "Machine Learning", "file": "machine_learning.txt" },
+  { "name": "Data visualisation", "file": "data_visualisation.txt" },
+  { "name": "Data preparation", "file": "data_prep.txt" },
+  { "name": "Modelleren 4.2", "file": "modelleren42.txt" }
+]
