@@ -11,7 +11,7 @@
 </head>
 <body>
   <header class="topbar">
-    <button id="menuBtn" class="icon-btn menu-btn" aria-label="Settings" aria-expanded="false">☰</button>
+    <button id="menuBtn" class="menu-btn" aria-controls="sidebar" aria-expanded="false"><span aria-hidden="true">☰</span> Lists</button>
     <div class="brand">
       <span class="brand-mark">Datalab</span>
       <span class="brand-title">30 Seconds</span>
@@ -48,7 +48,10 @@
       <section class="stats">
         <p class="muted small" id="deckInfo"></p>
       </section>
+
+      <button id="doneBtn" class="done-btn" type="button">Done</button>
     </aside>
+    <div id="backdrop" class="backdrop" hidden></div>
 
     <main class="stage">
       <div id="card" class="card idle">
@@ -61,14 +64,20 @@
         </div>
 
         <ol id="wordList" class="words"></ol>
-        <p id="hint" class="hint">Choose one or more word lists and press <strong>Next</strong> to start.</p>
+        <p id="hint" class="hint">
+          <span class="wide-only">Choose one or more word lists and press <strong>Next</strong> to start.</span>
+          <span class="narrow-only">Choose one or more word lists to start.</span>
+          <span class="ready">Press <strong>Next</strong> to start.</span>
+        </p>
+        <button id="chooseListsBtn" class="choose-btn narrow-only" type="button">Choose word lists</button>
 
         <div id="timesUp" class="times-up" hidden>Time's up!</div>
       </div>
 
       <div class="controls">
         <button id="nextBtn" class="next-btn" disabled>Next</button>
-        <p class="muted small">Press <kbd>Space</kbd> for the next round · click a word to mark it guessed</p>
+        <p class="muted small keyboard-only">Press <kbd>Space</kbd> for the next round · click a word to mark it guessed</p>
+        <p class="muted small touch-only">Tap a word to mark it guessed</p>
       </div>
     </main>
   </div>

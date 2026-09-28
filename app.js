@@ -21,6 +21,9 @@ const els = {
   sound: document.getElementById("timerSound"),
   sidebar: document.getElementById("sidebar"),
   menuBtn: document.getElementById("menuBtn"),
+  doneBtn: document.getElementById("doneBtn"),
+  backdrop: document.getElementById("backdrop"),
+  chooseListsBtn: document.getElementById("chooseListsBtn"),
   fullscreenBtn: document.getElementById("fullscreenBtn"),
 };
 
@@ -141,6 +144,7 @@ function selectedCategories() {
 
 function onSelectionChange() {
   els.nextBtn.disabled = selectedCategories().length === 0;
+  els.card.classList.toggle("has-lists", !els.nextBtn.disabled);
   updateDeckInfo();
   saveSettings();
 }
@@ -241,8 +245,7 @@ function nextRound() {
   showWords(drawWords());
   updateDeckInfo();
   startTimer();
-  els.sidebar.classList.remove("open");
-  els.menuBtn.setAttribute("aria-expanded", "false");
+  setSidebar(false);
 }
 
 // ---------- Events ----------
@@ -280,10 +283,16 @@ els.uploadInput.addEventListener("change", async () => {
   onSelectionChange();
 });
 
-els.menuBtn.addEventListener("click", () => {
-  const open = els.sidebar.classList.toggle("open");
+// Settings slide in from the side on small screens
+function setSidebar(open) {
+  els.sidebar.classList.toggle("open", open);
+  els.backdrop.hidden = !open;
   els.menuBtn.setAttribute("aria-expanded", String(open));
-});
+}
+els.menuBtn.addEventListener("click", () => setSidebar(!els.sidebar.classList.contains("open")));
+els.chooseListsBtn.addEventListener("click", () => setSidebar(true));
+els.doneBtn.addEventListener("click", () => setSidebar(false));
+els.backdrop.addEventListener("click", () => setSidebar(false));
 
 function toggleFullscreen() {
   if (document.fullscreenElement) document.exitFullscreen();
